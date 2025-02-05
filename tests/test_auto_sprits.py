@@ -20,8 +20,7 @@ class TestDataParser:
     def test_get_sprints_should_return_array_of_sprints(self):
         """ Test get_sprints"""
 
-        #arrange
-
+        # Arrange
         auto_sprint = self.set_up()
 
         # Act
@@ -42,22 +41,9 @@ class TestDataParser:
         """ Test check_sprints - wants to validate there is one active sprint and two future, 
         if this isn't the case, then this can be corrected before proceeding """
 
-        #arrange
-
+        # Arrange
         test_input = [[1, "Sprint 1", "active"], [2, "Sprint 2", "future"], [3, "Sprint 3", "future"] ]
-
-        #todo - move to a test set up method
-        mock_session = Mock()
-        mock_response = Mock()
-        mock_response.json.return_value = {
-            'total': 2,
-            'values': [{'id': 1, 'name': 'Sprint 1'}, {'id': 2, 'name': 'Sprint 2'}]
-        }
-        mock_response.text = json.dumps(mock_response.json.return_value)
-        mock_session.request.return_value = mock_response
-
-        # Act
-        auto_sprint = AutoSprint(session=mock_session)
+        auto_sprint = self.set_up()
 
         # Act
         result = auto_sprint.check_sprints(test_input)
