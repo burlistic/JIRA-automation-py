@@ -1,6 +1,7 @@
 from unittest.mock import Mock, patch
 from src.auto_sprints import AutoSprint
 import json
+import pytest
 
 class TestDataParser:
 
@@ -52,12 +53,14 @@ class TestDataParser:
         assert result == [["number of sprints", 3], ["number of active sprints", 1], ["active sprint ID", 1] ]
 
 
-    def test_check_sprints_invalid_two_active_throws_expection(self):
+    @pytest.mark.parametrize("test_input", [
+        [[1, "Sprint 1", "active"], [2, "Sprint 2", "active"], [3, "Sprint 3", "future"] ]
+    ])
+    def test_check_sprints_invalid_throws_expection(self, test_input):
         """ Test check_sprints - an invalid state, should throw an exception """
         # todo - add smarts to handle and correct a bad state
 
         # Arrange
-        test_input = [[1, "Sprint 1", "active"], [2, "Sprint 2", "active"], [3, "Sprint 3", "future"] ]
         auto_sprint = self.set_up()
 
         # Act
