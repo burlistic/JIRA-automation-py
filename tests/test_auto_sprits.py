@@ -54,11 +54,17 @@ class TestDataParser:
 
 
     @pytest.mark.parametrize("test_input", [
-        [[1, "Sprint 1", "active"], [2, "Sprint 2", "active"], [3, "Sprint 3", "future"] ]
+        [[1, "Sprint 1", "active"], [2, "Sprint 2", "active"], [3, "Sprint 3", "future"] ],
+        [[1, "Sprint 1", "active"], [2, "Sprint 2", "active"], [3, "Sprint 3", "active"] ],
+        [[1, "Sprint 1", "future"], [2, "Sprint 2", "future"], [3, "Sprint 3", "future"] ],
+        [[1, "Sprint 1", "future"]],
+        [[1, "Sprint 1", "future"], [2, "Sprint 2", "future"]],
+        [[1, "Sprint 1", "active"]],
+        [[1, "Sprint 1", "active"], [2, "Sprint 2", "future"]],
     ])
     def test_check_sprints_invalid_throws_expection(self, test_input):
         """ Test check_sprints - an invalid state, should throw an exception """
-        # todo - add smarts to handle and correct a bad state
+
 
         # Arrange
         auto_sprint = self.set_up()

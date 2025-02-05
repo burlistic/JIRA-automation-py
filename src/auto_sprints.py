@@ -72,12 +72,18 @@ class AutoSprint:
               active_sprints = active_sprints + 1 #todo - find a cleaner way to iterate
               active_sprint_id = x[0]
 
+        if number_of_sprints != 3:
+            raise Exception("Not three sprints (shound have one active and two future)") 
+
         if active_sprints > 1:
             raise Exception("More than one active sprints") 
 
+        if active_sprints == 0:
+            raise Exception("No active sprints") 
+           
+        # todo - add smarts to handle and correct a bad state
+        # todo - ensure the exceptions are logged
 
-        # to do - Throw exception if more than one active sprints
-        
         result = [["number of sprints", number_of_sprints], ["number of active sprints", active_sprints], ["active sprint ID", active_sprint_id] ]
 
         return result 
