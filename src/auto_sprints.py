@@ -23,7 +23,8 @@ class AutoSprint:
         }
         self._session = session or requests.Session()
 
-    def getSprints(self): #todo - inject in mock response
+    def get_sprints(self):
+        """Returns the sprints for the given JIRA project and board"""
 
         url = f"{self._baseurl}/rest/agile/1.0/board/{self._boardId}/sprint"
 

@@ -4,7 +4,7 @@ import json
 
 class TestDataParser:
 
-    def test_getSprints_should_return_array_of_sprints(self):
+    def test_get_sprints_should_return_array_of_sprints(self):
 
         #arrange
 
@@ -19,7 +19,7 @@ class TestDataParser:
 
         # Act
         auto_sprint = AutoSprint(session=mock_session)
-        result = auto_sprint.getSprints()
+        result = auto_sprint.get_sprints()
 
         # Assert
         assert result == [[1, "Sprint 1"], [2, "Sprint 2"]]
