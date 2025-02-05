@@ -72,6 +72,9 @@ class AutoSprint:
               active_sprints = active_sprints + 1 #todo - find a cleaner way to iterate
               active_sprint_id = x[0]
 
+        if active_sprints > 1:
+            raise Exception("More than one active sprints") 
+
 
         # to do - Throw exception if more than one active sprints
         

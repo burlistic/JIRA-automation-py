@@ -51,6 +51,23 @@ class TestDataParser:
         # Assert
         assert result == [["number of sprints", 3], ["number of active sprints", 1], ["active sprint ID", 1] ]
 
+
+    def test_check_sprints_invalid_two_active_throws_expection(self):
+        """ Test check_sprints - an invalid state, should throw an exception """
+        # todo - add smarts to handle and correct a bad state
+
+        # Arrange
+        test_input = [[1, "Sprint 1", "active"], [2, "Sprint 2", "active"], [3, "Sprint 3", "future"] ]
+        auto_sprint = self.set_up()
+
+        # Act
+        try:
+            auto_sprint.check_sprints(test_input)
+        except Exception:
+            assert True
+        else:
+            assert False
+
 # Create a new future sprint
 
 # Transfer issues from open sprint to the next
