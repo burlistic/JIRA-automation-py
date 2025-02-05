@@ -8,8 +8,7 @@ import os
 
 class AutoSprint:
     
-    def __init__(self, session=None):
-        
+    def __init__(self, session=None):    
 
         load_dotenv()
 
@@ -49,18 +48,33 @@ class AutoSprint:
         result = []
 
         for x in values:
-          result.append([x['id'] , x['name']])
+            result.append([x['id'] , x['name'], x['state']])
 
         print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
 
         return result
-   
-# Check there is one active sprint and two future
+    
+    def check_sprints(self, sprints_input : list[int, str]):
 
-# Create a new future sprint
+        # todo - consider Python lamda?
 
-# Transfer issues from open sprint to the next
+        # test_input = [[1, "Sprint 1", "active"], [2, "Sprint 2", "future"], [3, "Sprint 3", "future"] ]
 
-# Close the old sprint
+        # check number of sprints
+        number_of_sprints = len(sprints_input)
 
-# Start the new sprint
+        # check number of active sprints and confirm active sprint ID 
+        active_sprints = 0
+        active_sprint_id = 0
+
+        for x in sprints_input:
+            if x[2] == "active":
+              active_sprints = active_sprints + 1 #todo - find a cleaner way to iterate
+              active_sprint_id = x[0]
+
+
+        # to do - Throw exception if more than one active sprints
+        
+        result = [["number of sprints", number_of_sprints], ["number of active sprints", active_sprints], ["active sprint ID", active_sprint_id] ]
+
+        return result 
