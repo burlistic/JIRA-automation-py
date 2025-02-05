@@ -4,11 +4,7 @@ import json
 
 class TestDataParser:
 
-    def test_get_sprints_should_return_array_of_sprints(self):
-        """ Test get_sprints"""
-
-        #arrange
-
+    def set_up(self):
         mock_session = Mock()
         mock_response = Mock()
         mock_response.json.return_value = {
@@ -17,9 +13,18 @@ class TestDataParser:
         }
         mock_response.text = json.dumps(mock_response.json.return_value)
         mock_session.request.return_value = mock_response
+        
+        auto_sprint = AutoSprint(session=mock_session)
+        return auto_sprint
+
+    def test_get_sprints_should_return_array_of_sprints(self):
+        """ Test get_sprints"""
+
+        #arrange
+
+        auto_sprint = self.set_up()
 
         # Act
-        auto_sprint = AutoSprint(session=mock_session)
         result = auto_sprint.get_sprints()
 
         # Assert
