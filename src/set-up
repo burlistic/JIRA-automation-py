@@ -1,0 +1,15 @@
+#Set up commands for Coder / Docker Workspace
+
+sudo apt update
+
+sudo apt install python3
+
+sudo apt install python3-pip
+
+sudo apt install python3-pytest
+
+sudo apt install python3-mock
+
+sudo apt install python3-requests
+
+sudo apt install python3-dotenv
