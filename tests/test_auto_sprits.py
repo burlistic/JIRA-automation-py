@@ -72,12 +72,8 @@ class TestAutoSprint:
         auto_sprint = self.set_up()
 
         # Act
-        try:
+        with pytest.raises(Exception):
             auto_sprint.check_sprints(test_input)
-        except Exception:
-            assert True
-        else:
-            assert False
 
 # Create a new future sprint
 
