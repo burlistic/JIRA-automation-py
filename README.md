@@ -4,7 +4,7 @@ Set up automation script to match requirements for automating the stopping, crea
 
 Using the JIRA api to achieve the same results. Decided to also use TDD and learn more about dependancies injection in Python, so potentially a little over engineered. Could be a script with testing done against a dummy JIRA sandbox.
 
-### Gets all sprint for a give Project / board ✅
+### Gets all sprint for a given project / board ✅
 
 ### Validates there is one active sprints and two future sprints ✅
 
