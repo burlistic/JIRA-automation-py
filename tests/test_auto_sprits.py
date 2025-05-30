@@ -50,7 +50,7 @@ class TestAutoSprint:
         auto_sprint = self.set_up()
 
         # Act
-        result = auto_sprint.check_sprints(test_input)
+        result = auto_sprint.check_sprints(test_input) # type: ignore
 
         # Assert
         assert result == [["number of sprints", 3], ["number of active sprints", 1], ["active sprint ID", 1] ]

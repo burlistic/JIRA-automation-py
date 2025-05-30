@@ -91,3 +91,9 @@ class AutoSprint:
         result = [["number of sprints", number_of_sprints], ["number of active sprints", active_sprints], ["active sprint ID", active_sprint_id] ]
 
         return result 
+    
+
+# executing the code above - to be moved later
+
+auto_sprint = AutoSprint()  # Create an instance of AutoSprint for use in other modules
+auto_sprint.get_sprints()  # Call the method to fetch sprints
