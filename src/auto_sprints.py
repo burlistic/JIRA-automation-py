@@ -16,6 +16,8 @@ class AutoSprint:
         self._boardId = 1
         self._email = os.getenv('JIRA_EMAIL')
         self._api_token = os.getenv('JIRA_API_TOKEN')
+        if self._email is None or self._api_token is None:
+            raise ValueError("JIRA_EMAIL and JIRA_API_TOKEN environment variables must be set")
         self._auth = HTTPBasicAuth(self._email, self._api_token)
         self._headers = {
             "Accept": "application/json"
@@ -54,7 +56,9 @@ class AutoSprint:
 
         return result
     
-    def check_sprints(self, sprints_input : list[int, str]):
+    from typing import List, Tuple
+
+    def check_sprints(self, sprints_input: List[Tuple[int, str, str]]):
 
         # todo - consider Python lamda?
 
