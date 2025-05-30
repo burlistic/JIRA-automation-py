@@ -1,3 +1,9 @@
 *.pyc
 __pycache__/
 .env
+.pytest_cache/CACHEDIR.TAG
+.pytest_cache/README.md
+.pytest_cache/v/cache/lastfailed
+.pytest_cache/v/cache/nodeids
+.pytest_cache/v/cache/stepwise
+local-settings.env

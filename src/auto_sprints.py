@@ -16,8 +16,8 @@ class AutoSprint:
         self._boardId = 1
         self._email = os.getenv('JIRA_EMAIL')
         self._api_token = os.getenv('JIRA_API_TOKEN')
-        if self._email is None or self._api_token is None:
-            raise ValueError("JIRA_EMAIL and JIRA_API_TOKEN environment variables must be set")
+        # if self._email is None or self._api_token is None:
+        #     raise ValueError("JIRA_EMAIL and JIRA_API_TOKEN environment variables must be set")
         self._auth = HTTPBasicAuth(self._email, self._api_token)
         self._headers = {
             "Accept": "application/json"
@@ -95,5 +95,5 @@ class AutoSprint:
 
 # executing the code above - to be moved later
 
-auto_sprint = AutoSprint()  # Create an instance of AutoSprint for use in other modules
-auto_sprint.get_sprints()  # Call the method to fetch sprints
+#auto_sprint = AutoSprint()  # Create an instance of AutoSprint for use in other modules
+#auto_sprint.get_sprints()  # Call the method to fetch sprints
