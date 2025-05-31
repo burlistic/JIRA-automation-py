@@ -6,4 +6,3 @@ __pycache__/
 .pytest_cache/v/cache/lastfailed
 .pytest_cache/v/cache/nodeids
 .pytest_cache/v/cache/stepwise
-local-settings.env

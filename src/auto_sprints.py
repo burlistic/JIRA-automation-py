@@ -67,7 +67,7 @@ class AutoSprint:
         # check number of sprints
         number_of_sprints = len(sprints_input)
 
-        # check number of active sprints and confirm active sprint ID 
+        # check number of active sprints and confirm active sprint ID
         active_sprints = 0
         active_sprint_id = 0
 
@@ -77,21 +77,20 @@ class AutoSprint:
               active_sprint_id = x[0]
 
         if number_of_sprints != 3:
-            raise Exception("Not three sprints (shound have one active and two future)") 
+            raise Exception("Not three sprints (shound have one active and two future)")
 
         if active_sprints > 1:
-            raise Exception("More than one active sprints") 
+            raise Exception("More than one active sprints")
 
         if active_sprints == 0:
-            raise Exception("No active sprints") 
+            raise Exception("No active sprints")
            
         # todo - add smarts to handle and correct a bad state
         # todo - ensure the exceptions are logged
 
         result = [["number of sprints", number_of_sprints], ["number of active sprints", active_sprints], ["active sprint ID", active_sprint_id] ]
 
-        return result 
-    
+        return result
 
 # executing the code above - to be moved later
 
