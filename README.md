@@ -18,6 +18,8 @@ Using the JIRA api to achieve the same results. Decided to also use TDD and lear
 
 ## Set up
 
+> **Python requirement:** This project targets Python 3.11. Make sure that version is available in your environment before installing dependencies.
+
 ### Add to AWS as a Lamda
 
 ### Add secrets / create JIRA API token not linked to my person account
